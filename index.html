@@ -197,27 +197,27 @@
     <a href="https://github.com/bigtajine">bigtajine</a>
   </footer>
   <script>
-    document.querySelectorAll('.theme-btn').forEach(function(btn) {
-      btn.addEventListener('click', function() {
-        var theme = this.getAttribute('data-theme');
-        document.documentElement.setAttribute('data-theme', theme);
-        document.querySelectorAll('.theme-btn').forEach(function(b) {
-          b.classList.toggle('active', b === btn);
-          b.setAttribute('aria-pressed', b === btn ? 'true' : 'false');
-        });
-        try { localStorage.setItem('cv-theme', theme); } catch (e) {}
+    (function() {
+      var themes = ['sage', 'lavender', 'peach'];
+      var initial = themes[Math.floor(Math.random() * themes.length)];
+      document.documentElement.setAttribute('data-theme', initial);
+      document.querySelectorAll('.theme-btn').forEach(function(b) {
+        var isActive = b.getAttribute('data-theme') === initial;
+        b.classList.toggle('active', isActive);
+        b.setAttribute('aria-pressed', isActive ? 'true' : 'false');
       });
-    });
-    try {
-      var saved = localStorage.getItem('cv-theme');
-      if (saved && document.querySelector('.theme-btn[data-theme="' + saved + '"]')) {
-        document.documentElement.setAttribute('data-theme', saved);
-        document.querySelectorAll('.theme-btn').forEach(function(b) {
-          b.classList.toggle('active', b.getAttribute('data-theme') === saved);
-          b.setAttribute('aria-pressed', b.getAttribute('data-theme') === saved ? 'true' : 'false');
+      document.querySelectorAll('.theme-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          var theme = this.getAttribute('data-theme');
+          document.documentElement.setAttribute('data-theme', theme);
+          document.querySelectorAll('.theme-btn').forEach(function(b) {
+            b.classList.toggle('active', b === btn);
+            b.setAttribute('aria-pressed', b === btn ? 'true' : 'false');
+          });
+          try { localStorage.setItem('cv-theme', theme); } catch (e) {}
         });
-      }
-    } catch (e) {}
+      });
+    })();
   </script>
 </body>
 </html>
