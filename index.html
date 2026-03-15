@@ -199,7 +199,9 @@
   <script>
     (function() {
       var themes = ['sage', 'lavender', 'peach'];
-      var initial = themes[Math.floor(Math.random() * themes.length)];
+      var saved;
+      try { saved = localStorage.getItem('cv-theme'); } catch (e) {}
+      var initial = (saved && document.querySelector('.theme-btn[data-theme="' + saved + '"]')) ? saved : themes[Math.floor(Math.random() * themes.length)];
       document.documentElement.setAttribute('data-theme', initial);
       document.querySelectorAll('.theme-btn').forEach(function(b) {
         var isActive = b.getAttribute('data-theme') === initial;
