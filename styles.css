@@ -1,0 +1,279 @@
+/* Modern CV — jacobriggs.io/cv inspired */
+:root {
+  --bg: #fafaf9;
+  --bg-card: #fff;
+  --text: #1c1917;
+  --text-muted: #57534e;
+  --accent: #0f766e;
+  --accent-hover: #0d9488;
+  --border: #e7e5e4;
+  --font-sans: 'DM Sans', system-ui, sans-serif;
+  --font-serif: 'DM Serif Display', Georgia, serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--bg);
+}
+
+.site-header {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-card);
+}
+
+.nav {
+  max-width: 720px;
+  margin: 0 auto;
+  font-size: 0.9rem;
+}
+
+.nav a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav a:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+}
+
+.nav-sep, .nav-current {
+  color: var(--text-muted);
+  margin: 0 0.35rem;
+}
+
+.cv {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 3rem;
+}
+
+.cv-title {
+  font-family: var(--font-serif);
+  font-size: 2.25rem;
+  font-weight: 400;
+  margin: 0 0 2rem;
+  color: var(--text);
+}
+
+/* Summary */
+.summary {
+  margin-bottom: 0;
+}
+
+.summary-head {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.summary-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.summary-name {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin: 0 0 0.2rem;
+}
+
+.summary-role {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.summary-text {
+  margin: 0 0 1rem;
+  color: var(--text);
+}
+
+.summary-connect {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.summary-connect a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.summary-connect a:hover {
+  text-decoration: underline;
+  color: var(--accent-hover);
+}
+
+.section-hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 2rem 0;
+}
+
+.contact-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.contact-bar a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.contact-bar a:hover {
+  text-decoration: underline;
+}
+
+/* Section */
+.section {
+  margin-bottom: 0;
+}
+
+.section-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 1.25rem;
+  color: var(--text);
+}
+
+/* Jobs */
+.job {
+  margin-bottom: 2rem;
+}
+
+.job:last-child {
+  margin-bottom: 0;
+}
+
+.job-company {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  color: var(--text);
+}
+
+.job-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.job-role {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--text);
+}
+
+.job-period {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.job-desc {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 1.65;
+}
+
+/* Skills grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1rem;
+}
+
+.skills-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+}
+
+.skills-category {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--text-muted);
+  margin: 0 0 0.6rem;
+}
+
+.skills-card ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.skills-card li {
+  font-size: 0.9rem;
+  padding: 0.2rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.skills-card li:last-child {
+  border-bottom: none;
+}
+
+/* Education & Languages */
+.edu, .languages {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.site-footer {
+  text-align: center;
+  padding: 2rem 1.5rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.site-footer a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+  .cv-title {
+    font-size: 1.75rem;
+  }
+  .summary-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
