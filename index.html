@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="sage">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,6 +15,11 @@
       <a href="https://github.com/bigtajine">GitHub</a>
       <span class="nav-sep">/</span>
       <span class="nav-current">CV</span>
+      <span class="nav-sep">·</span>
+      <span class="theme-label">Theme</span>
+      <button type="button" class="theme-btn active" data-theme="sage" title="Sage pastel" aria-pressed="true">Sage</button>
+      <button type="button" class="theme-btn" data-theme="lavender" title="Lavender pastel" aria-pressed="false">Lavender</button>
+      <button type="button" class="theme-btn" data-theme="peach" title="Peach pastel" aria-pressed="false">Peach</button>
     </nav>
   </header>
 
@@ -31,7 +36,7 @@
         </div>
       </div>
       <p class="summary-text">
-        Focused on delivering clear, effective solutions and creating positive customer experiences. I work across troubleshooting, technical support, and client communication to resolve issues efficiently and improve service processes. Outside of work, I enjoy learning languages and exploring technology.
+        Multilingual problem-solver with hands-on experience across support, engineering, and data—ready to drive clarity and quality in EU-facing products. I bridge technical depth with clear communication, and I'm at home in distributed, cross-border teams. Focused on outcomes that scale and users who feel heard.
       </p>
       <p class="summary-connect"><a href="https://github.com/bigtajine">Connect with me on GitHub</a></p>
     </section>
@@ -57,7 +62,12 @@
           <h3 class="job-role">L2 Customer Support Engineer</h3>
           <span class="job-period">Remote</span>
         </div>
-        <p class="job-desc">Resolve complex technical tasks and escalations across 8+ SaaS products in a remote environment. Troubleshoot integrations and system issues using RESTful APIs (request/response analysis, endpoint testing, data validation). Investigate multi-system incidents to identify root causes and implement long-term fixes. Communicate clear, user-focused resolutions to technical and non-technical stakeholders. Improve documentation and support processes to enhance efficiency and service quality.</p>
+        <ul class="job-bullets">
+          <li>Own complex escalations across 8+ SaaS products—deliver root-cause fixes and clear handovers for distributed, EU-friendly support.</li>
+          <li>Debug integrations and APIs end-to-end (request/response, validation, logging) so technical and non-technical stakeholders stay aligned.</li>
+          <li>Drive documentation and process improvements that reduce repeat tickets and speed up resolution for global users.</li>
+          <li>Communicate incident updates and solutions in clear, user-focused language—supporting both internal teams and customers.</li>
+        </ul>
       </article>
 
       <article class="job">
@@ -66,7 +76,12 @@
           <h3 class="job-role">Full-Stack Developer</h3>
           <span class="job-period">Remote</span>
         </div>
-        <p class="job-desc">Built dynamic, responsive frontend applications with React, Next.js, TypeScript and Vue.js to create a better user experience. Created backend services with Node.js and PostgreSQL that were scalable and efficient. Managed app deployment and authentication using Supabase for real-time data and secure access. Tracked and coordinated code changes using Git across multiple projects.</p>
+        <ul class="job-bullets">
+          <li>Ship responsive, accessible frontends with React, Next.js, TypeScript, and Vue—built for performance and diverse user bases.</li>
+          <li>Design and maintain scalable backend services (Node.js, PostgreSQL, Supabase) with secure auth and real-time features.</li>
+          <li>Deploy and iterate via Git-based workflows; keep dependencies and deployments predictable for fast, safe releases.</li>
+          <li>Collaborate with product and design to turn requirements into reliable, maintainable code that scales with growth.</li>
+        </ul>
       </article>
 
       <article class="job">
@@ -75,7 +90,12 @@
           <h3 class="job-role">Data Analyst</h3>
           <span class="job-period">Amsterdam, Netherlands</span>
         </div>
-        <p class="job-desc">Analyzed large EU e-commerce datasets with SQL, BigQuery, Python, and Excel to support faster, data-driven marketing and operations decisions. Built ETL pipelines integrating multi-channel marketplace data, improving report accuracy and reducing latency. Automated Power BI dashboards to monitor performance and guide marketplace growth. Collaborated with marketing, product, and finance teams to deliver actionable insights. Ensured data quality through validation and cleansing for reliable analysis and reporting.</p>
+        <ul class="job-bullets">
+          <li>Turn EU e-commerce and marketplace data into actionable insights—SQL, BigQuery, Python, Excel—so marketing, ops, and finance decide faster.</li>
+          <li>Build and maintain ETL pipelines that unify multi-channel data; improve accuracy and cut reporting latency across regions.</li>
+          <li>Automate Power BI dashboards for performance monitoring and growth tracking, used by cross-functional EU teams.</li>
+          <li>Uphold data quality and consistency through validation and cleansing—supporting reliable reporting and compliance-minded use of data.</li>
+        </ul>
       </article>
     </section>
 
@@ -136,5 +156,28 @@
   <footer class="site-footer">
     <a href="https://github.com/bigtajine">bigtajine</a>
   </footer>
+  <script>
+    document.querySelectorAll('.theme-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var theme = this.getAttribute('data-theme');
+        document.documentElement.setAttribute('data-theme', theme);
+        document.querySelectorAll('.theme-btn').forEach(function(b) {
+          b.classList.toggle('active', b === btn);
+          b.setAttribute('aria-pressed', b === btn ? 'true' : 'false');
+        });
+        try { localStorage.setItem('cv-theme', theme); } catch (e) {}
+      });
+    });
+    try {
+      var saved = localStorage.getItem('cv-theme');
+      if (saved && document.querySelector('.theme-btn[data-theme="' + saved + '"]')) {
+        document.documentElement.setAttribute('data-theme', saved);
+        document.querySelectorAll('.theme-btn').forEach(function(b) {
+          b.classList.toggle('active', b.getAttribute('data-theme') === saved);
+          b.setAttribute('aria-pressed', b.getAttribute('data-theme') === saved ? 'true' : 'false');
+        });
+      }
+    } catch (e) {}
+  </script>
 </body>
 </html>
