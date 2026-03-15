@@ -169,7 +169,24 @@ body {
 }
 .job:hover { box-shadow: var(--shadow-hover); border-color: var(--accent-soft); }
 .job:last-child { margin-bottom: 0; }
-.job-company { font-weight: 600; font-size: 0.95rem; margin-bottom: 0.2rem; color: var(--text); }
+.job-company { font-weight: 600; font-size: 0.95rem; color: var(--text); }
+.job-head { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.2rem; flex-wrap: wrap; }
+.job-head .job-company { margin-bottom: 0; }
+.job-badge {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border-radius: 6px;
+  transition: background 0.3s ease, color 0.2s ease, border-color 0.3s ease;
+}
+.job-badge-current {
+  background: var(--accent-soft);
+  color: var(--accent-hover);
+  border: 1px solid var(--accent);
+}
 .job-meta { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 0.5rem; margin-bottom: 0.75rem; }
 .job-role { font-size: 0.95rem; font-weight: 600; margin: 0; color: var(--text); }
 .job-period { font-size: 0.8rem; color: var(--text-muted); }
