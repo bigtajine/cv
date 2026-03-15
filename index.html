@@ -10,27 +10,30 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
   <header class="site-header">
-    <nav class="nav">
+    <nav class="nav" aria-label="Site navigation">
       <a href="https://github.com/bigtajine">GitHub</a>
       <span class="nav-sep">/</span>
       <span class="nav-current">CV</span>
       <span class="nav-sep">·</span>
-      <span class="theme-label">Theme</span>
-      <button type="button" class="theme-btn active" data-theme="sage" title="Sage pastel" aria-pressed="true">Sage</button>
-      <button type="button" class="theme-btn" data-theme="lavender" title="Lavender pastel" aria-pressed="false">Lavender</button>
-      <button type="button" class="theme-btn" data-theme="peach" title="Peach pastel" aria-pressed="false">Peach</button>
+      <span class="theme-label" id="theme-label">Theme</span>
+      <div class="theme-buttons" role="group" aria-labelledby="theme-label">
+        <button type="button" class="theme-btn active" data-theme="sage" title="Sage pastel" aria-pressed="true">Sage</button>
+        <button type="button" class="theme-btn" data-theme="lavender" title="Lavender pastel" aria-pressed="false">Lavender</button>
+        <button type="button" class="theme-btn" data-theme="peach" title="Peach pastel" aria-pressed="false">Peach</button>
+      </div>
     </nav>
   </header>
 
-  <main class="cv">
+  <main class="cv" id="main-content" role="main">
     <h1 class="cv-title">CV / Résumé</h1>
 
-    <section class="summary animate-in">
+    <section class="summary animate-in" aria-labelledby="summary-name">
       <div class="summary-head">
-        <img src="https://avatars.githubusercontent.com/u/95099494?v=4" alt="" class="summary-avatar" />
+        <img src="https://avatars.githubusercontent.com/u/95099494?v=4" alt="" class="summary-avatar" width="64" height="64" />
         <div>
-          <h2 class="summary-name">bigtajine</h2>
+          <h2 class="summary-name" id="summary-name">bigtajine</h2>
           <p class="summary-role">Technical Support · Full-Stack Developer · Data Analyst</p>
         </div>
       </div>
@@ -41,22 +44,22 @@
 
     <hr class="section-hr" />
 
-    <section class="contact-bar animate-in">
+    <section class="contact-bar animate-in" aria-label="Contact information">
       <span class="contact-item">Worldwide</span>
-      <span class="contact-dot">·</span>
+      <span class="contact-dot" aria-hidden="true">·</span>
       <span class="contact-item">email@example.com</span>
-      <span class="contact-dot">·</span>
+      <span class="contact-dot" aria-hidden="true">·</span>
       <span class="contact-item">+1 234 567 8900</span>
     </section>
 
     <hr class="section-hr" />
 
-    <section class="section animate-in">
-      <h2 class="section-title">Key Work Experience</h2>
+    <section class="section animate-in" aria-labelledby="exp-heading">
+      <h2 class="section-title" id="exp-heading">Key Work Experience</h2>
 
       <article class="job">
         <div class="job-head">
-          <a href="https://www.linkedin.com/company/trilogy" class="job-company" target="_blank" rel="noopener">Trilogy</a>
+          <a href="https://www.linkedin.com/company/trilogy" class="job-company" target="_blank" rel="noopener noreferrer">Trilogy</a>
           <span class="job-badge job-badge-current">Current</span>
         </div>
         <div class="job-meta">
@@ -72,7 +75,7 @@
       </article>
 
       <article class="job">
-        <a href="https://www.linkedin.com/company/mindioo" class="job-company" target="_blank" rel="noopener">Mindioo</a>
+        <a href="https://www.linkedin.com/company/mindioo" class="job-company" target="_blank" rel="noopener noreferrer">Mindioo</a>
         <div class="job-meta">
           <h3 class="job-role">Full-Stack Developer</h3>
           <span class="job-period">Remote · 2024–2025</span>
@@ -86,7 +89,7 @@
       </article>
 
       <article class="job">
-        <a href="https://www.linkedin.com/company/operator1/" class="job-company" target="_blank" rel="noopener">Operator One</a>
+        <a href="https://www.linkedin.com/company/operator1/" class="job-company" target="_blank" rel="noopener noreferrer">Operator One</a>
         <div class="job-meta">
           <h3 class="job-role">Data Analyst</h3>
           <span class="job-period">Remote · 2024</span>
@@ -102,8 +105,8 @@
 
     <hr class="section-hr" />
 
-    <section class="section animate-in">
-      <h2 class="section-title">Technical Skills</h2>
+    <section class="section animate-in" aria-labelledby="skills-heading">
+      <h2 class="section-title" id="skills-heading">Technical Skills</h2>
       <div class="skills-grid">
         <div class="skills-card">
           <h4 class="skills-category">Frontend</h4>
@@ -126,15 +129,15 @@
 
     <hr class="section-hr" />
 
-    <section class="section animate-in">
-      <h2 class="section-title">Education</h2>
+    <section class="section animate-in" aria-labelledby="edu-heading">
+      <h2 class="section-title" id="edu-heading">Education</h2>
       <p class="edu"><strong>B.Sc. Computer Science</strong> — University of the People, Pasadena, United States</p>
     </section>
 
     <hr class="section-hr" />
 
-    <section class="section section-languages animate-in">
-      <h2 class="section-title">Languages</h2>
+    <section class="section section-languages animate-in" aria-labelledby="lang-heading">
+      <h2 class="section-title" id="lang-heading">Languages</h2>
       <div class="lang-chart">
         <div class="lang-row" data-level="native">
           <div class="lang-label">
