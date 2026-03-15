@@ -50,6 +50,37 @@ html[data-theme="peach"] {
 
 html { scroll-behavior: smooth; }
 
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Skip link: visible on focus for keyboard/screen reader */
+.skip-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  padding: 0.75rem 1rem;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 0 0 6px 0;
+  transform: translateY(-100%);
+  transition: transform 0.2s ease;
+}
+.skip-link:focus {
+  transform: translateY(0);
+  outline: 2px solid var(--text);
+  outline-offset: 2px;
+}
+
 body {
   margin: 0;
   font-family: var(--font-sans);
@@ -58,6 +89,17 @@ body {
   color: var(--text);
   background: var(--bg);
   transition: background 0.3s ease, color 0.2s ease;
+}
+
+/* Focus visible: keyboard users see where they are (UX gold standard) */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+a:focus:not(:focus-visible),
+button:focus:not(:focus-visible) {
+  outline: none;
 }
 
 @keyframes fadeInUp {
@@ -104,10 +146,12 @@ body {
 .nav-sep, .nav-current { color: var(--text-muted); margin: 0 0.2rem; }
 
 .theme-label { margin-left: 0.5rem; color: var(--text-muted); font-size: 0.8rem; }
+.theme-buttons { display: inline-flex; align-items: center; margin-left: 0.15rem; }
 
 .theme-btn {
   padding: 0.25rem 0.5rem;
   margin: 0 0.15rem;
+  min-height: 36px;
   font-family: var(--font-sans);
   font-size: 0.75rem;
   border: 1px solid var(--border);
@@ -277,9 +321,21 @@ body {
   .cv-title { font-size: 1.65rem; }
   .nav { gap: 0.35rem; }
   .theme-label { margin-left: 0; width: 100%; }
+  .theme-buttons { margin-left: 0; }
+  .theme-btn { min-height: 44px; min-width: 44px; }
   .summary-head { flex-direction: column; align-items: flex-start; }
   .skills-grid { grid-template-columns: 1fr; }
   .lang-row { grid-template-columns: 1fr; gap: 0.4rem; }
   .lang-label { justify-content: flex-start; }
   .lang-level { font-size: 0.65rem; }
+}
+
+@media print {
+  .skip-link,
+  .site-header { display: none !important; }
+  body { background: #fff; color: #111; }
+  .cv { padding-top: 1rem; }
+  .job, .skills-card { box-shadow: none; border: 1px solid #ddd; }
+  a[href] { color: #111; }
+  a[href]::after { content: ''; }
 }
