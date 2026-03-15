@@ -75,6 +75,7 @@ body {
 .summary-avatar { width: 64px; height: 64px; border-radius: 14px; object-fit: cover; box-shadow: var(--shadow); }
 .summary-name { font-family: var(--font-serif); font-size: 1.4rem; font-weight: 400; margin: 0 0 0.15rem; letter-spacing: -0.01em; }
 .summary-role { margin: 0; font-size: 0.9rem; color: var(--text-muted); }
+.summary-tag { margin: 0.35rem 0 0; font-size: 0.8rem; color: var(--text-muted); font-style: italic; }
 .summary-text { margin: 0 0 1rem; color: var(--text); font-size: 0.95rem; }
 .summary-connect { margin: 0; font-size: 0.9rem; }
 .summary-connect a { color: var(--accent); text-decoration: none; font-weight: 500; transition: color 0.2s ease; }
