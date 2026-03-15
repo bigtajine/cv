@@ -1,11 +1,11 @@
-/* CV — pastel themes (harmonious UX), smooth bullets */
+/* CV — pastel themes, WCAG AA contrast for text */
 
 :root,
 html[data-theme="sage"] {
   --bg: #f4f6f5;
   --bg-card: #fff;
   --text: #1c211f;
-  --text-muted: #5c6562;
+  --text-muted: #4a524f;
   --accent: #0d9488;
   --accent-soft: #99d4ce;
   --accent-hover: #0f766e;
@@ -22,7 +22,7 @@ html[data-theme="lavender"] {
   --bg: #f5f4f8;
   --bg-card: #fff;
   --text: #211f2b;
-  --text-muted: #65627a;
+  --text-muted: #534f66;
   --accent: #7c6bb8;
   --accent-soft: #c4bbeb;
   --accent-hover: #6355a0;
@@ -36,7 +36,7 @@ html[data-theme="peach"] {
   --bg: #faf6f4;
   --bg-card: #fff;
   --text: #2b211f;
-  --text-muted: #7a6b65;
+  --text-muted: #5f554e;
   --accent: #c77b5a;
   --accent-soft: #e8c4b5;
   --accent-hover: #a85d42;
@@ -69,16 +69,13 @@ body {
   transition: background 0.3s ease, color 0.2s ease;
 }
 
-/* Focus visible: keyboard users see where they are (UX gold standard) */
 a:focus-visible,
 button:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
 a:focus:not(:focus-visible),
-button:focus:not(:focus-visible) {
-  outline: none;
-}
+button:focus:not(:focus-visible) { outline: none; }
 
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(12px); }
@@ -290,7 +287,6 @@ button:focus:not(:focus-visible) {
   animation: barFill 1s var(--ease-out) 0.5s backwards;
   transition: background 0.3s ease;
 }
-/* Tier styling: basic = softer bar so level reads at a glance */
 .lang-row[data-level="basic"] .lang-bar {
   opacity: 0.82;
   background: var(--accent-soft);
