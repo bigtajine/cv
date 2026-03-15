@@ -1,2 +1,221 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="sage">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CV / Résumé — bigtajine</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=DM+Serif+Display&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
 <body>
   <header class="site-header">
+    <nav class="nav" aria-label="Site navigation">
+      <a href="https://github.com/bigtajine">GitHub</a>
+      <span class="nav-sep">/</span>
+      <span class="nav-current">CV</span>
+      <span class="nav-sep">·</span>
+      <span class="theme-label" id="theme-label">Theme</span>
+      <div class="theme-buttons" role="group" aria-labelledby="theme-label">
+        <button type="button" class="theme-btn active" data-theme="sage" title="Sage pastel" aria-pressed="true">Sage</button>
+        <button type="button" class="theme-btn" data-theme="lavender" title="Lavender pastel" aria-pressed="false">Lavender</button>
+        <button type="button" class="theme-btn" data-theme="peach" title="Peach pastel" aria-pressed="false">Peach</button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="cv" id="main-content" role="main">
+    <h1 class="cv-title">CV / Résumé</h1>
+
+    <section class="summary animate-in" aria-labelledby="summary-name">
+      <div class="summary-head">
+        <img src="https://avatars.githubusercontent.com/u/95099494?v=4" alt="" class="summary-avatar" width="64" height="64" />
+        <div>
+          <h2 class="summary-name" id="summary-name">bigtajine</h2>
+          <p class="summary-role">Technical Support · Full-Stack Developer · Data Analyst</p>
+        </div>
+      </div>
+      <p class="summary-text">
+        Multilingual: I put in the work so support, code, and data land clearly for global teams and users. Technical depth and clear communication—I own escalations, ship features, and turn data into decisions. Built for distributed, cross-border environments and for outcomes that scale.
+      </p>
+    </section>
+
+    <hr class="section-hr" />
+
+    <section class="contact-bar animate-in" aria-label="Contact information">
+      <span class="contact-item">Worldwide</span>
+      <span class="contact-dot" aria-hidden="true">·</span>
+      <span class="contact-item">email@example.com</span>
+      <span class="contact-dot" aria-hidden="true">·</span>
+      <span class="contact-item">+1 234 567 8900</span>
+    </section>
+
+    <hr class="section-hr" />
+
+    <section class="section animate-in" aria-labelledby="exp-heading">
+      <h2 class="section-title" id="exp-heading">Key Work Experience</h2>
+
+      <article class="job">
+        <div class="job-head">
+          <a href="https://www.linkedin.com/company/trilogy" class="job-company" target="_blank" rel="noopener noreferrer">Trilogy</a>
+          <span class="job-badge job-badge-current">Current</span>
+        </div>
+        <div class="job-meta">
+          <h3 class="job-role">Cyborg</h3>
+          <span class="job-period">Remote · 2025–</span>
+        </div>
+        <ul class="job-bullets">
+          <li>Own complex escalations across 8+ SaaS products—deliver root-cause fixes and clear handovers for distributed support.</li>
+          <li>Debug integrations and APIs end-to-end (request/response, validation, logging) so technical and non-technical stakeholders stay aligned.</li>
+          <li>Drive documentation and process improvements that reduce repeat tickets and speed up resolution for global users.</li>
+          <li>Communicate incident updates and solutions in clear, user-focused language—supporting both internal teams and customers.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <a href="https://www.linkedin.com/company/mindioo" class="job-company" target="_blank" rel="noopener noreferrer">Mindioo</a>
+        <div class="job-meta">
+          <h3 class="job-role">Full-Stack Developer</h3>
+          <span class="job-period">Remote · 2024–2025</span>
+        </div>
+        <ul class="job-bullets">
+          <li>Ship responsive, accessible frontends with React, Next.js, TypeScript, and Vue—built for performance and diverse user bases.</li>
+          <li>Design and maintain scalable backend services (Node.js, PostgreSQL, Supabase) with secure auth and real-time features.</li>
+          <li>Deploy and iterate via Git-based workflows; keep dependencies and deployments predictable for fast, safe releases.</li>
+          <li>Collaborate with product and design to turn requirements into reliable, maintainable code that scales with growth.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <a href="https://www.linkedin.com/company/operator1/" class="job-company" target="_blank" rel="noopener noreferrer">Operator One</a>
+        <div class="job-meta">
+          <h3 class="job-role">Data Analyst</h3>
+          <span class="job-period">Remote · 2024</span>
+        </div>
+        <ul class="job-bullets">
+          <li>Turn e-commerce and marketplace data into actionable insights—SQL, BigQuery, Python, Excel—so marketing, ops, and finance decide faster.</li>
+          <li>Build and maintain ETL pipelines that unify multi-channel data; improve accuracy and cut reporting latency across regions.</li>
+          <li>Automate Power BI dashboards for performance monitoring and growth tracking, used by cross-functional teams.</li>
+          <li>Uphold data quality and consistency through validation and cleansing—supporting reliable reporting and sound use of data.</li>
+        </ul>
+      </article>
+    </section>
+
+    <hr class="section-hr" />
+
+    <section class="section animate-in" aria-labelledby="skills-heading">
+      <h2 class="section-title" id="skills-heading">Technical Skills</h2>
+      <div class="skills-grid">
+        <div class="skills-card">
+          <h4 class="skills-category">Frontend</h4>
+          <ul><li>React</li><li>Next.js</li><li>TypeScript</li><li>Vue.js</li></ul>
+        </div>
+        <div class="skills-card">
+          <h4 class="skills-category">Backend & Data</h4>
+          <ul><li>Node.js</li><li>PostgreSQL</li><li>Supabase</li><li>SQL</li><li>BigQuery</li></ul>
+        </div>
+        <div class="skills-card">
+          <h4 class="skills-category">Data & Analytics</h4>
+          <ul><li>Python</li><li>Excel</li><li>ETL</li><li>Power BI</li></ul>
+        </div>
+        <div class="skills-card">
+          <h4 class="skills-category">Tools & Other</h4>
+          <ul><li>REST APIs</li><li>Git</li><li>Customer support</li><li>SaaS</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-hr" />
+
+    <section class="section animate-in" aria-labelledby="edu-heading">
+      <h2 class="section-title" id="edu-heading">Education</h2>
+      <p class="edu"><strong>B.Sc. Computer Science</strong> — University of the People, Pasadena, United States</p>
+    </section>
+
+    <hr class="section-hr" />
+
+    <section class="section section-languages animate-in" aria-labelledby="lang-heading">
+      <h2 class="section-title" id="lang-heading">Languages</h2>
+      <div class="lang-chart">
+        <div class="lang-row" data-level="native">
+          <div class="lang-label">
+            <span class="lang-name">English</span>
+            <span class="lang-level">Native</span>
+          </div>
+          <div class="lang-track"><div class="lang-bar" style="--pct: 100;"></div></div>
+        </div>
+        <div class="lang-row" data-level="fluent">
+          <div class="lang-label">
+            <span class="lang-name">Spanish</span>
+            <span class="lang-level">Fluent</span>
+          </div>
+          <div class="lang-track"><div class="lang-bar" style="--pct: 90;"></div></div>
+        </div>
+        <div class="lang-row" data-level="fluent">
+          <div class="lang-label">
+            <span class="lang-name">Dutch</span>
+            <span class="lang-level">Fluent</span>
+          </div>
+          <div class="lang-track"><div class="lang-bar" style="--pct: 90;"></div></div>
+        </div>
+        <div class="lang-row" data-level="conversational">
+          <div class="lang-label">
+            <span class="lang-name">French</span>
+            <span class="lang-level">Convers.</span>
+          </div>
+          <div class="lang-track"><div class="lang-bar" style="--pct: 58;"></div></div>
+        </div>
+        <div class="lang-row" data-level="conversational">
+          <div class="lang-label">
+            <span class="lang-name">Portuguese</span>
+            <span class="lang-level">Convers.</span>
+          </div>
+          <div class="lang-track"><div class="lang-bar" style="--pct: 58;"></div></div>
+        </div>
+        <div class="lang-row" data-level="conversational">
+          <div class="lang-label">
+            <span class="lang-name">Russian</span>
+            <span class="lang-level">Convers.</span>
+          </div>
+          <div class="lang-track"><div class="lang-bar" style="--pct: 58;"></div></div>
+        </div>
+        <div class="lang-row" data-level="basic">
+          <div class="lang-label">
+            <span class="lang-name">Arabic</span>
+            <span class="lang-level">Basic</span>
+          </div>
+          <div class="lang-track"><div class="lang-bar" style="--pct: 32;"></div></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a href="https://github.com/bigtajine">bigtajine</a>
+  </footer>
+  <script>
+    document.querySelectorAll('.theme-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var theme = this.getAttribute('data-theme');
+        document.documentElement.setAttribute('data-theme', theme);
+        document.querySelectorAll('.theme-btn').forEach(function(b) {
+          b.classList.toggle('active', b === btn);
+          b.setAttribute('aria-pressed', b === btn ? 'true' : 'false');
+        });
+        try { localStorage.setItem('cv-theme', theme); } catch (e) {}
+      });
+    });
+    try {
+      var saved = localStorage.getItem('cv-theme');
+      if (saved && document.querySelector('.theme-btn[data-theme="' + saved + '"]')) {
+        document.documentElement.setAttribute('data-theme', saved);
+        document.querySelectorAll('.theme-btn').forEach(function(b) {
+          b.classList.toggle('active', b.getAttribute('data-theme') === saved);
+          b.setAttribute('aria-pressed', b.getAttribute('data-theme') === saved ? 'true' : 'false');
+        });
+      }
+    } catch (e) {}
+  </script>
+</body>
+</html>
