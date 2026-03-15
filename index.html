@@ -6,7 +6,7 @@
   <title>CV / Résumé — bigtajine</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=DM+Serif+Display&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -21,7 +21,7 @@
   <main class="cv">
     <h1 class="cv-title">CV / Résumé</h1>
 
-    <section class="summary">
+    <section class="summary animate-in">
       <div class="summary-head">
         <img src="https://avatars.githubusercontent.com/u/95099494?v=4" alt="" class="summary-avatar" />
         <div>
@@ -37,17 +37,17 @@
 
     <hr class="section-hr" />
 
-    <section class="contact-bar">
-      <span>Edinburgh, United Kingdom</span>
-      <span>·</span>
-      <a href="mailto:dani.bosman@outlook.com">dani.bosman@outlook.com</a>
-      <span>·</span>
-      <a href="tel:+447405337835">(+44) 7405337835</a>
+    <section class="contact-bar animate-in">
+      <span class="contact-item">🌐 Worldwide</span>
+      <span class="contact-dot">·</span>
+      <span class="contact-item">email@example.com</span>
+      <span class="contact-dot">·</span>
+      <span class="contact-item">+1 234 567 8900</span>
     </section>
 
     <hr class="section-hr" />
 
-    <section class="section">
+    <section class="section animate-in">
       <h2 class="section-title">Key Work Experience</h2>
 
       <article class="job">
@@ -80,7 +80,7 @@
 
     <hr class="section-hr" />
 
-    <section class="section">
+    <section class="section animate-in">
       <h2 class="section-title">Technical Skills</h2>
       <div class="skills-grid">
         <div class="skills-card">
@@ -104,16 +104,31 @@
 
     <hr class="section-hr" />
 
-    <section class="section">
+    <section class="section animate-in">
       <h2 class="section-title">Education</h2>
       <p class="edu"><strong>B.Sc. Computer Science</strong> — University of the People, Pasadena, United States</p>
     </section>
 
     <hr class="section-hr" />
 
-    <section class="section">
+    <section class="section section-languages animate-in">
       <h2 class="section-title">Languages</h2>
-      <p class="languages">Mother tongue: English · Other: French | Dutch</p>
+      <div class="lang-chart">
+        <div class="lang-row">
+          <div class="lang-label">
+            <span class="lang-name">English</span>
+            <span class="lang-level">Native</span>
+          </div>
+          <div class="lang-track"><div class="lang-bar" style="--pct: 100;"></div></div>
+        </div>
+        <div class="lang-row">
+          <div class="lang-label">
+            <span class="lang-name">Spanish</span>
+            <span class="lang-level">Fluent</span>
+          </div>
+          <div class="lang-track"><div class="lang-bar" style="--pct: 95;"></div></div>
+        </div>
+      </div>
     </section>
   </main>
 
