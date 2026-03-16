@@ -69,6 +69,17 @@ body {
   transition: background 0.3s ease, color 0.2s ease;
 }
 
+/* Slightly tighter and wider layout when "Wide" is selected */
+html[data-layout="wide"] body {
+  font-size: 15px;
+}
+
+html[data-layout="wide"] .cv {
+  max-width: 880px;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
 a:focus-visible,
 button:focus-visible {
   outline: 2px solid var(--accent);
@@ -116,6 +127,11 @@ button:focus:not(:focus-visible) { outline: none; }
   gap: 0.5rem 0.75rem;
 }
 
+/* In wide layout, navigation tracks the wider content width a bit better */
+html[data-layout="wide"] .nav {
+  max-width: 880px;
+}
+
 .nav a { color: var(--accent); text-decoration: none; font-weight: 500; transition: color 0.2s ease; }
 .nav a:hover { color: var(--accent-hover); text-decoration: underline; }
 .nav-sep, .nav-current { color: var(--text-muted); margin: 0; }
@@ -144,6 +160,49 @@ button:focus:not(:focus-visible) { outline: none; }
 }
 .theme-btn:hover { background: var(--border); color: var(--text); }
 .theme-btn.active { background: var(--accent-soft); color: var(--accent-hover); border-color: var(--accent); }
+
+/* Layout toggle */
+.nav-layout-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.layout-label {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+.layout-buttons {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.layout-btn {
+  padding: 0.25rem 0.55rem;
+  min-height: 32px;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.layout-btn:hover {
+  background: var(--border);
+  color: var(--text);
+}
+
+.layout-btn.active {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
 
 .cv { max-width: 720px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
 
@@ -312,8 +371,20 @@ button:focus:not(:focus-visible) { outline: none; }
 @media print {
   .site-header { display: none !important; }
   body { background: #fff; color: #111; }
-  .cv { padding-top: 1rem; }
+  .cv { padding-top: 0.75rem; padding-bottom: 0.5rem; }
   .job, .skills-card { box-shadow: none; border: 1px solid #ddd; }
   a[href] { color: #111; }
   a[href]::after { content: ''; }
+
+  /* In wide layout, use the full printable width and slightly smaller type
+     so the current content reliably fits on a single page. */
+  html[data-layout="wide"] body {
+    font-size: 14px;
+  }
+
+  html[data-layout="wide"] .cv {
+    max-width: none;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
 }
