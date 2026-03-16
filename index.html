@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="sage">
+<html lang="en" data-theme="sage" data-layout="regular">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -22,6 +22,14 @@
           <button type="button" class="theme-btn active" data-theme="sage" title="Sage pastel" aria-pressed="true">Sage</button>
           <button type="button" class="theme-btn" data-theme="lavender" title="Lavender pastel" aria-pressed="false">Lavender</button>
           <button type="button" class="theme-btn" data-theme="peach" title="Peach pastel" aria-pressed="false">Peach</button>
+        </div>
+      </div>
+      <span class="nav-sep" aria-hidden="true">·</span>
+      <div class="nav-layout-group">
+        <span class="layout-label" id="layout-label">Layout</span>
+        <div class="layout-buttons" role="group" aria-labelledby="layout-label">
+          <button type="button" class="layout-btn active" data-layout="regular" aria-pressed="true">Regular</button>
+          <button type="button" class="layout-btn" data-layout="wide" aria-pressed="false">Wide</button>
         </div>
       </div>
     </nav>
@@ -198,25 +206,61 @@
   </footer>
   <script>
     (function() {
+      // Theme toggle
       var themes = ['sage', 'lavender', 'peach'];
-      var saved;
-      try { saved = localStorage.getItem('cv-theme'); } catch (e) {}
-      var initial = (saved && document.querySelector('.theme-btn[data-theme="' + saved + '"]')) ? saved : themes[Math.floor(Math.random() * themes.length)];
-      document.documentElement.setAttribute('data-theme', initial);
+      var savedTheme;
+      try { savedTheme = localStorage.getItem('cv-theme'); } catch (e) {}
+      var initialTheme = (savedTheme && document.querySelector('.theme-btn[data-theme="' + savedTheme + '"]'))
+        ? savedTheme
+        : themes[Math.floor(Math.random() * themes.length)];
+
+      document.documentElement.setAttribute('data-theme', initialTheme);
+
       document.querySelectorAll('.theme-btn').forEach(function(b) {
-        var isActive = b.getAttribute('data-theme') === initial;
+        var isActive = b.getAttribute('data-theme') === initialTheme;
         b.classList.toggle('active', isActive);
         b.setAttribute('aria-pressed', isActive ? 'true' : 'false');
       });
+
       document.querySelectorAll('.theme-btn').forEach(function(btn) {
         btn.addEventListener('click', function() {
           var theme = this.getAttribute('data-theme');
           document.documentElement.setAttribute('data-theme', theme);
           document.querySelectorAll('.theme-btn').forEach(function(b) {
-            b.classList.toggle('active', b === btn);
-            b.setAttribute('aria-pressed', b === btn ? 'true' : 'false');
+            var active = b === btn;
+            b.classList.toggle('active', active);
+            b.setAttribute('aria-pressed', active ? 'true' : 'false');
           });
           try { localStorage.setItem('cv-theme', theme); } catch (e) {}
+        });
+      });
+
+      // Layout toggle (Regular / Wide)
+      var layouts = ['regular', 'wide'];
+      var savedLayout;
+      try { savedLayout = localStorage.getItem('cv-layout'); } catch (e) {}
+      var initialLayout = (savedLayout && document.querySelector('.layout-btn[data-layout="' + savedLayout + '"]'))
+        ? savedLayout
+        : 'regular';
+
+      document.documentElement.setAttribute('data-layout', initialLayout);
+
+      document.querySelectorAll('.layout-btn').forEach(function(b) {
+        var isActive = b.getAttribute('data-layout') === initialLayout;
+        b.classList.toggle('active', isActive);
+        b.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+      });
+
+      document.querySelectorAll('.layout-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          var layout = this.getAttribute('data-layout');
+          document.documentElement.setAttribute('data-layout', layout);
+          document.querySelectorAll('.layout-btn').forEach(function(b) {
+            var active = b === btn;
+            b.classList.toggle('active', active);
+            b.setAttribute('aria-pressed', active ? 'true' : 'false');
+          });
+          try { localStorage.setItem('cv-layout', layout); } catch (e) {}
         });
       });
     })();
